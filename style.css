@@ -1,0 +1,39 @@
+.header {
+  display: block;
+}
+.header__title {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-decoration: none;
+  color: #7e7e82;
+  font-style: normal;
+  font-size: 16px;
+  border: none;
+}
+.brands {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: white;
+  width: 240px;
+  height: 72px;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05s);
+}
+.brands__icon {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+}
