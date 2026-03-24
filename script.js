@@ -1,30 +1,39 @@
-const swiper = new swiper(".brands__icon", {
-  loop: true,
+let swiper;
 
-  slidesPerview: 1,
-  spaceBetween: 20,
+function initSwiper() {
+  if (window.innerWidth < 768) {
+    if (!swiper) {
+      swiper = new Swiper(".swiper", {
+        direction: "horizontal",
+        loop: true,
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        grabCursor: true,
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+        touchStartPreventDefault: false,
+        preventClicks: false,
+        preventClicksPropagation: false,
 
-  breakpoints: {
-    640: {
-      slidesPerview: 2,
-    },
-    1024: {
-      slidesPerview: 3,
-    },
-  },
-});
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 
-/*const swiper = new Swiper("#brandcard", {
-  direction: "horizontal",
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  
-  },*/
+      document.querySelectorAll(".brands__icon").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          swiper.slideNext();
+        });
+      });
+    }
+  } else {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  }
+}
+
+window.addEventListener("load", initSwiper);
+window.addEventListener("resize", initSwiper);
