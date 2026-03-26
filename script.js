@@ -8,7 +8,7 @@ function initSwiper() {
         loop: true,
         slidesPerView: 1.2,
         spaceBetween: 16,
-        grabCursor: true,
+        grabCursor: false,
 
         touchStartPreventDefault: false,
         preventClicks: false,
