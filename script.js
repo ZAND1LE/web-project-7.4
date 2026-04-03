@@ -5,14 +5,9 @@ function initSwiper() {
     if (!swiper) {
       swiper = new Swiper(".swiper", {
         direction: "horizontal",
-        loop: true,
+
         slidesPerView: 1.2,
         spaceBetween: 16,
-        grabCursor: false,
-
-        touchStartPreventDefault: false,
-        preventClicks: false,
-        preventClicksPropagation: false,
 
         pagination: {
           el: ".swiper-pagination",
